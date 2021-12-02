@@ -24,9 +24,9 @@ int push_arg;
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -56,6 +56,7 @@ void op_add(stack_t **stack, unsigned int line_number);
 void op_nop(stack_t **stack, unsigned int line_number);
 
 /* exec_instruction*/
-void exec_instruction(char *command, stack_t **stack, unsigned int line_number);
+void exec_instruction(char *command, stack_t **stack,
+		      unsigned int line_number);
 
 #endif /* !MONTY_H */
