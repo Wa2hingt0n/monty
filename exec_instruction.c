@@ -14,6 +14,11 @@ void exec_instruction(char *command, stack_t **stack, unsigned int line_number)
 	instruction_t command_struct[] = {
 		{"push", op_push},
 		{"pall", op_pall},
+		{"pint", op_pint},
+		{"pop", op_pop},
+		{"swap", op_swap},
+		{"add", op_add},
+		{"nop", op_nop},
 		{NULL, NULL}
 	};
 
