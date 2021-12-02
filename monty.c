@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	char *commands;
 	size_t bytes_read = 0;
 	unsigned int line_number = 1;
-	stack_t *stack = NULL;
+	stack_t *stack = NULL, *tmp_free;
 
 	if (argc != 2)
 	{
@@ -41,6 +41,12 @@ int main(int argc, char *argv[])
 			line_number++;
 		}
 		free(r_buffer);
+		while (stack)
+		{
+			tmp_free = stack->next;
+			free(stack);
+			stack = tmp_free;
+		}
 		fclose(fd);
 	}
 	return (0);
