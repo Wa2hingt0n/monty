@@ -23,9 +23,6 @@ void op_add(stack_t **stack, unsigned int line_number)
 	node_result = tmp->next;
 	result = tmp->n + (node_result)->n;
 	node_result->n = result;
-	/*node_reult->prev = NULL;
-	*stack = node_result;
-	free(tmp);*/
 	op_pop(stack, line_number);
 }
 
