@@ -32,7 +32,6 @@ int main(int argc, char *argv[])
 			exit(EXIT_FAILURE);
 		}
 
-
 		while ((chars_read = getline(&r_buffer, &bytes_read, fd)) != -1)
 		{
 			commands = _strtok(r_buffer, line_number);

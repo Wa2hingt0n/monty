@@ -59,4 +59,15 @@ void op_nop(stack_t **stack, unsigned int line_number);
 void exec_instruction(char *command, stack_t **stack,
 		      unsigned int line_number);
 
+/* error_handlers*/
+void argc_error(void);
+int malloc_error(void);
+int file_open_error(char *filename);
+int invalid_op_error(char *opcode, unsigned int line_number);
+
+/* error_handlers_2 */
+int pop_error(unsigned int line_number);
+int pint_error(unsigned int line_number);
+int short_stack_error(unsigned int line_number, char *op);
+
 #endif /* !MONTY_H */

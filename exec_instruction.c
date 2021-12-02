@@ -34,5 +34,4 @@ void exec_instruction(char *command, stack_t **stack, unsigned int line_number)
 
 	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, command);
 	exit(EXIT_FAILURE);
-
 }
