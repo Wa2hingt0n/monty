@@ -26,19 +26,12 @@ void exec_instruction(char *command, stack_t **stack, unsigned int line_number)
 	{
 		if (strcmp(command_struct[i].opcode, command) == 0)
 		{
-			/*printf("Before opcode execution\n");*/
 			command_struct[i].f(stack, line_number);
-			/*printf("After opcode execution\n");*/
 			return;
 		}
 		i++;
 	}
 
-	/*write(STDERR_FILENO, "L", 1);
-	write(STDERR_FILENO, line_number, 2);
-	write(STDERR_FILENO, ": unknown instruction ", 22);
-	write(STDERR_FILENO, command, strlen(*command));
-	write(STDERR_FILENO, "\n", 2);*/
 	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, command);
 	exit(EXIT_FAILURE);
 
