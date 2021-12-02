@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		/*write(2, "USAGE: monty file\n", 19);*/
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
@@ -29,19 +28,14 @@ int main(int argc, char *argv[])
 		fd = fopen(argv[1], "r");
 		if (fd == NULL)
 		{
-			/*write(STDERR_FILENO, "Error: Can't open file ", 23);
-			write(STDERR_FILENO, argv[1], strlen(argv[1]));
-			write(STDERR_FILENO, "\n", 1);*/
 			fprintf(stderr, "Error: can't open file %s\n", argv[1]);
 			exit(EXIT_FAILURE);
 		}
 
 
-		while ((chars_read = getline(&r_buffer, &bytes_read, fd))!= -1)
+		while ((chars_read = getline(&r_buffer, &bytes_read, fd)) != -1)
 		{
-			/*printf("Before strtok\n");*/
 			commands = _strtok(r_buffer, line_number);
-			/*printf("After strtok\n");*/
 			if (commands != NULL)
 				exec_instruction(commands, &stack, line_number);
 			line_number++;
